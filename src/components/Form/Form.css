@@ -1,0 +1,101 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+form {
+  color: #2c3e50;
+  background: #cbd5e0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+form > h3 {
+  margin: 1rem 0 0.5rem;
+}
+form > div {
+  margin: 0.25rem;
+}
+
+label {
+  width: 140px;
+  text-align: right;
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-weight: 700;
+}
+
+form > div > input {
+  width: max-content;
+}
+
+input[type='text'],
+input[type='password'],
+select,
+textarea {
+  width: 400px;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  border: none;
+  border-radius: 2px;
+  resize: vertical;
+}
+input[type='text']::placeholder {
+  color: #4a5568;
+}
+
+.btn > button {
+  background: #48bb78;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+.btn {
+  margin-left: 290px;
+  width: 100%;
+}
+
+.text-validate {
+  color: red;
+  margin-left: 140px;
+  font-size: 12px;
+  font-style: italic;
+}
+.validate-input > input[type='text'],
+.validate-input > input[type='password'],
+.validate-input > select {
+  border: 1px solid red;
+}
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+@media screen and (max-width: 414px) {
+  label {
+    text-align: left;
+  }
+  input[type='text'],
+  input[type='password'],
+  select,
+  textarea {
+    width: 150px;
+  }
+  form {
+    padding: 1rem;
+    width: 350px;
+  }
+  .btn {
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+  }
+}

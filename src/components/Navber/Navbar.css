@@ -1,0 +1,21 @@
+nav {
+  display: flex;
+  justify-content: center;
+}
+nav > a {
+  margin: 2rem 1rem;
+  color: #2c3e50;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 414px) {
+  /* nav {
+    display: none;
+  } */
+  nav > a {
+    margin: 2rem 0.5rem;
+    font-size: 13px;
+  }
+}

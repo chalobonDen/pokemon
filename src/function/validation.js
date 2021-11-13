@@ -1,4 +1,4 @@
-export default function validation(values) {
+const validation = (values) => {
   let errors = {};
 
   if (values.firstname.length === 0) {
@@ -31,4 +31,5 @@ export default function validation(values) {
     errors.gender = 'Please fill out this field';
   }
   return errors;
-}
+};
+export default validation;

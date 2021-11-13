@@ -4,6 +4,7 @@ import '../App.css';
 const Function1 = () => {
   const [input, setInput] = useState('');
   const [result, setResult] = useState('');
+  const [myArray, setMyArray] = useState([]);
 
   const onClick = () => {
     if (input.length !== 0) {
@@ -12,25 +13,27 @@ const Function1 = () => {
       });
       setInput('');
       Result(arr_new);
+      setMyArray(arr_new);
     } else {
       setInput('');
       Result();
+      setMyArray('');
     }
   };
 
   const Result = (arr_new) => {
-    const arr = Array.from(new Set(arr_new));
+    const arr = Array.from(new Set(arr_new)).filter((item) => !isNaN(item));
 
     if (arr) {
-      if (arr.length === 1) {
+      if (arr.length === 0) {
+        return setResult('null');
+      } else if (arr.length === 1) {
         return setResult(arr[0]);
       } else {
         const max_array = Math.max(...arr);
         arr.splice(arr.indexOf(max_array), 1);
         return setResult(Math.max(...arr));
       }
-    } else {
-      return setResult('null');
     }
   };
 
@@ -47,8 +50,21 @@ const Function1 = () => {
         />
         <button onClick={onClick}>Click</button>
       </div>
-
-      <p>Result is : {result}</p>
+      <p>
+        Array : {myArray.length > 0 ? '[' : ''}
+        {myArray.length > 0
+          ? myArray.map((val, i) => {
+              return (
+                <span key={i}>
+                  {val}
+                  {i === myArray.length - 1 ? '' : ','}
+                </span>
+              );
+            })
+          : 'please enter number'}
+        {myArray.length > 0 ? ']' : ''}
+      </p>
+      <p>{result ? `Result is : ${result}` : ''}</p>
     </div>
   );
 };
